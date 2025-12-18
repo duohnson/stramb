@@ -19,3 +19,9 @@ Se deben usar estas funciones para cargar las vistas de una nueva app en proyect
 
 def contacto(request):
     return render(request, 'home/contacto.html')
+
+def tienda(request):
+    return render(request, 'home/tienda.html')
+
+def pedidos(request):
+    return render(request, 'home/pedidos.html')
