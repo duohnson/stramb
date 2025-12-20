@@ -5,8 +5,7 @@ urlpatterns = [
     path('', views.index, name='index'), # Ruta principal, donde ubica index
     # Como se ve, esta vacia '' ya que indica ser ruta RAIZ.
     path('contacto/', views.contacto, name='contacto'), # Ruta de contacto, a llamada de contacto
-    path('pedidos/', views.pedidos, name='pedidos'), # Ruta de contacto, a llamada de contacto
-    path('tienda/', views.tienda, name='tienda'), # Ruta de contacto, a llamada de contacto
+    path('pedidos/', views.pedidos, name='pedidos'), # Ruta de pedidos, a llamada de pedidos
 
 ]
 

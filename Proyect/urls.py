@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings # imagenes
+from django.conf.urls.static import static # imagenes
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,6 +25,8 @@ urlpatterns = [
     #path('usuarios/', include('usuarios.urls')),
     #path('accounts/', include('django.contrib.auth.urls')), # Rutas de autenticacion
     #path('accounts/', include('usuarios.urls')), # Rutas personalizadas de usuarios
-    
-    
+    path('catalogo/', include('tienda.urls')), # Agregamos la ruta de la carpeta tienda al principal.
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
