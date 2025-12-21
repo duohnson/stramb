@@ -21,11 +21,9 @@ from django.conf.urls.static import static # imagenes
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls')), # Agregamos la ruta de la carpeta home al principal.
-    #path('usuarios/', include('usuarios.urls')),
-    #path('accounts/', include('django.contrib.auth.urls')), # Rutas de autenticacion
-    #path('accounts/', include('usuarios.urls')), # Rutas personalizadas de usuarios
-    path('catalogo/', include('tienda.urls')), # Agregamos la ruta de la carpeta tienda al principal.
+    path('', include('home.urls')), 
+    path('catalogo/', include('tienda.urls')), 
+    path('buscar/', include('buscador.urls')), 
 ]
 
 if settings.DEBUG:

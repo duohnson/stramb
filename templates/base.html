@@ -3,31 +3,28 @@
 <head>
 <meta charset="UFT-8">
 <link href="/static/css/style.css" rel="stylesheet">
-<!--
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-<link href="/static/css/sass.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
--->
 <title>Strawberry Daki</title>
 </head>
-
     <body style="text-align: center;">  <!-- style da estilos -->
-
-    <!-- Titulos -->
-    <h1>
-        <img src="/static/img/fresa.png" alt="fresas" width="50" height="50">Bienvenido
-        <img src="/static/img/fresa.png" alt="fresas" width="50" height="50"></h1>
-    <h2>Compras en linea</h2>
-    <ul> 
-    <p>Pronto aplicaremos muchas mas funciones.</p>
-    <footer>
-        <p>En creacion</p>
-        <a href="/"><button class="btn">Bienvenido</button></a>
-        <a href="/catalogo/"><button class="btn">Tienda</button></a>
-        <a href="/contacto/"><button class="btn">Contacto</button></a>
-        <!--<a href="/pedidos/"><button class="btn">Pedidos</button></a>-->
-    </footer>
-        <div class="container">
+    <!-- titulos -->
+<nav class="navbar">
+    <div class="logo">Strawberry Daki<span>.</span></div>
+    <input type="checkbox" id="check">
+        <label for="check" class="menu-btn">
+            <span></span>
+        </label>
+    <ul class="nav-links">
+        <form class="search-container" role="search" action="{% url 'buscar' %}" method="get">
+            <input type="search" name="q" placeholder="Buscador.." value="{{request.GET.q|default:'' }}" class="search-input">
+            <button type="submit" class="search-btn">Buscar</button>
+        </form>
+        <li><a href="/">Bienvenido</a></li>
+        <li><a href="/catalogo/">Tienda</a></li>
+        <li><a href="/contacto/">Contacto</a></li>
+        <li><a href="#" class="btn-cta">Proximamente</a></li>
+    </ul>
+</nav>
+    <div class="container">
         {% block catalogo %}
         {% endblock %}
     </div>
